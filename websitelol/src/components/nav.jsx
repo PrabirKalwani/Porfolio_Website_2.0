@@ -3,10 +3,10 @@ const Nav = () => {
   return (
     <div className ="navstuff">
     <nav className="navMenu">
-      <a href="#">Home</a>
-      <a href="#">Blog</a>
-      <a href="#">Work</a>
-      <a href="#">About</a>
+      <a href="/home">Home</a>
+      <a href="/bytes">Bytes</a>
+      <a href="/work">Work</a>
+      <a href="/about">About</a>
       <div className="dot"></div>
     </nav>
   </div>

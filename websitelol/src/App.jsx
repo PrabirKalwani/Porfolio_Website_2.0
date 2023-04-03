@@ -1,15 +1,63 @@
-import React from 'react';
-import Hero from './componets/hero';
-import Nav from './componets/nav';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import Home from './pages/Home';
+import Work from './pages/Work';
+import Bytes from './pages/Byte';
+import About from './pages/About';
+import RingLoader from "react-spinners/RingLoader";
 import './styles/style.css'
-const App = () => {
-  return (
-      <div className='main'> 
-        <Nav />
-      <Hero />
-    </div>
 
+function App() {
+  // preloader
+  const [loading, setLoading] = useState(false);
+  const [loadingPercentage, setLoadingPercentage] = useState(0);
+
+  useEffect(() => {
+    setLoading(true);
+    let percentage = 0;
+    const interval = setInterval(() => {
+      if (percentage >= 100) {
+        clearInterval(interval);
+        setLoading(false);
+      } else {
+        percentage += 5;
+        setLoadingPercentage(percentage);
+      }
+    }, 400);
+  }, []);
+
+  const navigateToWork = () => {
+    navigate('/work');
+  };
+
+  return (
+    <div className="preloader">
+      {loading ? (
+        <>
+          <RingLoader
+            color={"#ffff"}
+            loading={loading}
+            size={100}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            className='ringloader'
+          />
+          <p className="loading-percentage">{`${loadingPercentage}%`}</p>
+        </>
+      ) : (
+        <Router>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/work" element={<Work navigateToWork={navigateToWork} />} />
+            <Route path="/bytes" element={<Bytes />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Router>
+      )}
+    </div>
   );
+
+  const navigate = useNavigate();
 }
 
 export default App;
