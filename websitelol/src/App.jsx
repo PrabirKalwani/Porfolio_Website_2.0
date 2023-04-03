@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import Bytes from './pages/Byte';
@@ -47,6 +47,7 @@ function App() {
       ) : (
         <Router>
           <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/work" element={<Work navigateToWork={navigateToWork} />} />
             <Route path="/bytes" element={<Bytes />} />
