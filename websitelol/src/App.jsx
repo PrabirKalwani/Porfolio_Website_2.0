@@ -23,7 +23,7 @@ function App() {
         percentage += 5;
         setLoadingPercentage(percentage);
       }
-    }, 400);
+    }, 150);
   }, []);
 
   const navigateToWork = () => {

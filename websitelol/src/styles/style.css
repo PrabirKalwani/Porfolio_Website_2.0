@@ -4,6 +4,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
+
+/* preloader */
 .preloader{
   text-align: center;
   background-color: black;
@@ -26,7 +28,7 @@ font-family: 'Satoshi', sans-serif;
 }
 
 
-
+/* main file */
 * {
     margin:0;
     padding:0;
@@ -39,6 +41,7 @@ font-family: 'Satoshi', sans-serif;
     background-color: black;
 
 }
+/* hero component */
 
 .video_bg {
     width:100%;
@@ -176,28 +179,33 @@ nav.navstuff {
 }
 
 
-/* infinte scroll */
+/* infinte scroll component */
 
-
-.marquee {
-  position: relative;
-  width: 100vw;
-  max-width: 100%;
-  height: 200px;
-  overflow-x: hidden;
+.scroll-container {
+  overflow: hidden;
+  height: 100px;
+  background-color: #222222;
+  padding: 10px;
+  border-bottom: 2px;
+  border-color: white;
 }
 
-.track {
-  position: absolute;
+.scroll-text {
   white-space: nowrap;
-  will-change: transform;
-  animation: marquee 32s linear infinite;
+  color: #c3eed7;
+  animation: scroll 10s linear infinite;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1.2rem;
+  line-height: 5.27rem;
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
-
 
 
