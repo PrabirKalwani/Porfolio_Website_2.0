@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div>
       {/* <div className='overlay'></div> */}
-      <video className='video_bg' src={VideoBg} autoPlay loop muted />
+      <video className='video_bg' src={VideoBg} data-autoPlay autoPlay webkit-playsinline playsinline loop muted />
       <div className='content'>
         <p className='catchph'>Freelance-Designer-Devloper</p>
         <h1 className='Heading'>katapliktikós/ Visual Designer</h1>
