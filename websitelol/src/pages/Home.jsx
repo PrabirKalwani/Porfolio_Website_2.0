@@ -4,7 +4,7 @@ import Nav from '../components/nav';
 import Scroll from '../components/scroll'; 
 import Projects from '../components/projects';
 import '../styles/style.css'; 
-import CardOp from '../components/CardOp';
+import Cards from '../components/cards';
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
       <Hero />
       <Scroll /> 
       <Projects />
-       <CardOp />
+      <Cards />
     </div>
   );
 };
